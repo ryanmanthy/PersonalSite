@@ -179,28 +179,30 @@ governments, non-profits, and biologists`
           <hr className="border-t border-gray-300" />
 
           <section className="transition-all duration-1000 ease-out delay-500">
-            <h2 className="text-2xl font-semibold mb-8">Projects and initiatives:</h2>
-            <div className="space-y-6">
-              {[
-                { name: 'Youth Civic Hub', description: 'centralized civic information tool for NYC youth', partnerships: 'built in partnership with NYC Office of Public Engagement', url: 'https://example.com/youth-civic-hub'  },
-                { name: 'CELLxGENE Explorer', description: 'conducted a post-launch usability test of visualization tool', url: 'https://example.com/cellxgene-explorer' },
-                { name: 'teen.vote', description: 'tool to run voter registration drives and engage young people in civics', views: '10k+ students engaged annually', url: 'https://example.com/teen-vote' },
-                { name: 'CancerX Data Sprint', description: 'proposed data sprint to promote interoperability of oncology data', url: 'https://example.com/cancerx-data-sprint' },
-              ].map((project) => (
-                <div key={project.name} className="flex flex-col sm:flex-row items-start group hover:bg-gray-100 p-2 rounded-lg transition-colors">
-                  <Link href={project.url} className="font-semibold text-lg hover:underline flex items-center w-full sm:w-56 shrink-0 mb-2 sm:mb-0">
+          <h2 className="text-2xl font-semibold mb-8">Projects and initiatives:</h2>
+          <div className="space-y-6">
+            {[
+              { name: 'Youth Civic Hub', description: 'centralized civic information tool for NYC youth', partnerships: 'built in partnership with NYC Office of Public Engagement', url: 'https://example.com/youth-civic-hub'  },
+              { name: 'CELLxGENE Explorer', description: 'conducted a post-launch usability test of visualization tool', url: 'https://example.com/cellxgene-explorer' },
+              { name: 'teen.vote', description: 'tool to run voter registration drives and engage young people in civics', views: '10k+ students engaged annually', url: 'https://example.com/teen-vote' },
+              { name: 'CancerX Data Sprint', description: 'proposed data sprint to promote interoperability of oncology data', url: 'https://example.com/cancerx-data-sprint' },
+            ].map((project) => (
+              <Link href={project.url} key={project.name} className="block group hover:bg-gray-100 p-2 rounded-lg transition-colors">
+                <div className="flex flex-col sm:flex-row items-start">
+                  <div className="font-semibold text-lg flex items-center w-full sm:w-56 shrink-0 mb-2 sm:mb-0">
                     {project.name}
                     <ArrowUpRight className="ml-1 h-4 w-4" aria-hidden="true" />
-                  </Link>
+                  </div>
                   <div className="flex-grow">
                     <p>{project.description}</p>
                     {project.partnerships && <p className="text-gray-600 text-sm mt-1">{project.partnerships}</p>}
                     {project.views && <p className="text-gray-600 text-sm mt-1">{project.views}</p>}
                   </div>
                 </div>
-              ))}
-            </div>
-          </section>
+              </Link>
+            ))}
+          </div>
+        </section>
 
           <section className="transition-all duration-1000 ease-out delay-900">
             <h2 className="text-2xl font-semibold mb-5">Featured Press</h2>
