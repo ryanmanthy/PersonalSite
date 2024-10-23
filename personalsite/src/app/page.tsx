@@ -173,9 +173,9 @@ useEffect(() => {
             <div className="h-5" aria-hidden="true"></div>
             <p className="text-base">
               I'm in my last year studying <strong>computer science </strong> and <strong>biomedical engineering </strong>at Illinois Tech. Right now, I'm creating software to get out the vote 
-              in Pennsylvania and Arizona with <Link href="https://example.com" className="underline">New Voters</Link> and building <Link href="https://example.com" className="underline">GovGoose</Link>, a RAG Model for searching state and local government sites.<br /><br />
-              I've previously worked at the <Link href="https://example.com" className="underline">Chan Zuckerberg Initiative</Link>, 
-              <Link href="https://example.com" className="underline">U.S. Department of Health and Human Services</Link>, <Link href="https://example.com" className="underline">Kaplan Institute</Link>, and Dom's Kitchen & Market <span className="italic">(Closed in 2024)</span>. I am a <strong>2022 Obama Chesky Voyager Scholar </strong>
+              in Pennsylvania and Arizona with <Link href="https://www.new-voters.org" className="underline">New Voters</Link> and building <Link href="https://www.govgoose.com" className="underline">GovGoose</Link>, a RAG Model for searching state and local government sites.<br /><br />
+              I've previously worked at the <Link href="https://www.chanzuckerberg.com" className="underline">Chan Zuckerberg Initiative</Link>, 
+              <Link href="https://www.hhs.gov/ash/osm/innovationx/index.html" className="underline">U.S. Department of Health and Human Services</Link>, <Link href="https://kaplan.iit.edu" className="underline">Kaplan Institute</Link>, and Dom's Kitchen & Market <span className="italic">(Closed in 2024)</span>. I am a <strong>2022 Obama Chesky Voyager Scholar </strong>
               and 2024 Student Laureate for the <strong>Abraham Lincoln Civic Enagagement Award</strong>. <br /><br />
               My experience has spanned design, software engineering, and business development in government, healthcare, and biotechnology. <span className="italic">Available for Work Fall 2024</span>
             </p>
@@ -207,22 +207,14 @@ useEffect(() => {
             </div>
           </section>
 
-          <section className="transition-all duration-1000 ease-out delay-700">
-            <h2 className="text-2xl font-semibold mb-5">Another Text Option</h2>
-            <p>
-              This section can be used for additional descriptions, skills, or any other
-              information you'd like to highlight.
-            </p>
-          </section>
-
           <section className="transition-all duration-1000 ease-out delay-900">
             <h2 className="text-2xl font-semibold mb-5">Featured Press</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { title: 'Article Title 1', publication: 'Publication Name 1' },
-                { title: 'Article Title 2', publication: 'Publication Name 2' },
-                { title: 'Article Title 3', publication: 'Publication Name 3' },
-                { title: 'Article Title 4', publication: 'Publication Name 4' },
+                { title: 'NYC youth voter turnout is always low. Can this digital tool change that?', publication: 'The Gothamist' },
+                { title: 'Student Aims to Help Others Access Health Care Support Through Obama Foundation Scholarship', publication: 'Illinois Tech Today' },
+                { title: 'Health IT Vendors to Support USCDI+ Cancer Data Elements', publication: 'Healthcare Innovation' },
+                { title: 'Thank You 2023 Civic Digital Fellows', publication: 'HHS' },
               ].map((article, index) => (
                 <ArticleCard key={article.title} title={article.title} publication={article.publication} index={index} />
               ))}
@@ -233,8 +225,8 @@ useEffect(() => {
             <h2 className="text-2xl font-semibold mb-5">Get in Touch</h2>
             <p>
               Feel free to reach out to me at{' '}
-              <a href="mailto:your.email@example.com" className="text-blue-600 hover:underline">
-                your.email@example.com
+              <a href="mailto:hello@ryanmanthy.com" className="text-blue-600 hover:underline">
+                hello [at] ryanmanthy [dot] com
               </a>
             </p>
           </section>
@@ -243,9 +235,8 @@ useEffect(() => {
             <h2 className="text-2xl font-semibold mb-5">Socials</h2>
             <div className="space-y-2">
               {[
-                { platform: 'Twitter', username: '@yourusername' },
-                { platform: 'GitHub', username: 'yourusername' },
-                { platform: 'LinkedIn', username: 'yourname' },
+                { platform: 'GitHub', username: 'ryanmanthy' },
+                { platform: 'LinkedIn', username: 'ryanmanthy' },
               ].map((social) => (
                 <div key={social.platform} className="flex items-center">
                   <span className="w-24">{social.platform}</span>
@@ -260,7 +251,7 @@ useEffect(() => {
         </main>
       </div>
       <footer className="mt-20 text-center text-gray-500 transition-all duration-1000 ease-out delay-1500">
-        <p>&copy; 2024 Ryan Manthy. All rights reserved.</p>
+        <p>&copy; Site created by Ryan Manthy.</p>
       </footer>
     </div>
   )
