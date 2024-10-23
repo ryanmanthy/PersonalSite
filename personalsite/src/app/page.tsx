@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 
-const ArticleCard = ({ title, publication, index }: { title: string; publication: string; index: number }) => {
+const ArticleCard = ({ title, publication, index, url }: { title: string; publication: string; index: number; url: string }) => {
   const [isHovered, setIsHovered] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationRef = useRef<number | null>(null)
@@ -24,16 +24,15 @@ const ArticleCard = ({ title, publication, index }: { title: string; publication
     canvas.height = canvas.offsetHeight
 
     const points: { x: number; y: number; vy: number }[] = []
-    const numPoints = 11 // Increased number of points for smoother curve
+    const numPoints = 11
     for (let i = 0; i <= numPoints; i++) {
       points.push({
         x: (i / numPoints) * canvas.width,
         y: canvas.height,
-        vy: Math.random() * 0.4 + 0.8 // Random vertical speed between 0.8 and 1.2
+        vy: Math.random() * 0.4 + 0.8
       })
     }
 
-    // Ensure first and last points are at the edges
     points[0].x = 0
     points[numPoints].x = canvas.width
 
@@ -42,7 +41,7 @@ const ArticleCard = ({ title, publication, index }: { title: string; publication
         startTimeRef.current = timestamp
       }
       const elapsed = timestamp - startTimeRef.current
-      const progress = Math.min(elapsed / 300, 1) // 200ms = 0.2 seconds
+      const progress = Math.min(elapsed / 300, 1)
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -50,21 +49,19 @@ const ArticleCard = ({ title, publication, index }: { title: string; publication
       ctx.beginPath()
       ctx.moveTo(0, canvas.height)
 
-      // Update point positions
       points.forEach(point => {
         point.y = canvas.height - (canvas.height * progress * point.vy)
-        point.y = Math.max(0, point.y) // Ensure the point doesn't go above the canvas
+        point.y = Math.max(0, point.y)
       })
 
-      // Draw the curve
       ctx.moveTo(0, canvas.height)
-      ctx.lineTo(0, points[0].y) // Start from the left edge
+      ctx.lineTo(0, points[0].y)
       for (let i = 0; i < points.length - 1; i++) {
         const xc = (points[i].x + points[i + 1].x) / 2
         const yc = (points[i].y + points[i + 1].y) / 2
         ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc)
       }
-      ctx.lineTo(canvas.width, points[points.length - 1].y) // End at the right edge
+      ctx.lineTo(canvas.width, points[points.length - 1].y)
       ctx.lineTo(canvas.width, canvas.height)
       ctx.closePath()
       ctx.fill()
@@ -72,7 +69,6 @@ const ArticleCard = ({ title, publication, index }: { title: string; publication
       if (progress < 1) {
         animationRef.current = requestAnimationFrame(animate)
       } else {
-        // Ensure the entire card is filled at the end
         ctx.fillRect(0, 0, canvas.width, canvas.height)
       }
     }
@@ -95,11 +91,11 @@ const ArticleCard = ({ title, publication, index }: { title: string; publication
   }, [isHovered, color])
 
   return (
-    <Link href="#" className="block">
+    <Link href={url} className="block h-full">
       <div 
         className="p-4 rounded-lg transition-all duration-300 ease-in-out 
                     bg-[#FFF9F4] border border-gray-200
-                    group relative overflow-hidden"
+                    group relative overflow-hidden h-full"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -124,24 +120,23 @@ and civic organizer
 who enjoys building cool stuff for
 governments, non-profits, and biologists`
 
-useEffect(() => {
-  let i = 0
-  const typingInterval = setInterval(() => {
-    if (i < fullText.length) {
-      const newText = fullText.slice(0, i + 1)
-      setTypedText(newText)
-      console.log('Current typed text:', newText) // Log the current state of the text
-      i++
-    } else {
-      clearInterval(typingInterval)
-    }
-  }, 50)
+  useEffect(() => {
+    let i = 0
+    const typingInterval = setInterval(() => {
+      if (i < fullText.length) {
+        const newText = fullText.slice(0, i + 1)
+        setTypedText(newText)
+        i++
+      } else {
+        clearInterval(typingInterval)
+      }
+    }, 50)
 
-  return () => clearInterval(typingInterval)
-}, [])
+    return () => clearInterval(typingInterval)
+  }, [])
 
   return (
-    <div className="min-h-screen bg-[#FFF9F4] flex flex-col items-center py-[max(7vh,2.5rem)] px-[max(7vw,1.25rem)] font-sans">
+    <div className="min-h-screen bg-[#FFF9F4] flex flex-col items-center py-[max(7vh,2.5rem)] px-[max(7vw,1.25rem)] font-sans text-gray-800">
       <div className="w-full max-w-[750px]">
         <header className="flex justify-between items-center mb-20 transition-all duration-1000 ease-out">
           <h1 className="text-3xl font-bold">Ryan Manthy</h1>
@@ -187,13 +182,13 @@ useEffect(() => {
             <h2 className="text-2xl font-semibold mb-8">Projects and initiatives:</h2>
             <div className="space-y-6">
               {[
-                { name: 'Youth Civic Hub', description: 'centralized civic information tool for NYC youth', partnerships: 'built in partnership with NYC Office of Public Engagement'  },
-                { name: 'CELLxGENE Explorer', description: 'conducted a post-launch usability test of visualization tool'},
-                { name: 'teen.vote', description: 'tool to run voter registration drives and engage young people in civics', views: '10k+ students engaged annually' },
-                { name: 'CancerX Data Sprint', description: 'proposed data sprint to promote interoperability of oncology data' },
+                { name: 'Youth Civic Hub', description: 'centralized civic information tool for NYC youth', partnerships: 'built in partnership with NYC Office of Public Engagement', url: 'https://example.com/youth-civic-hub'  },
+                { name: 'CELLxGENE Explorer', description: 'conducted a post-launch usability test of visualization tool', url: 'https://example.com/cellxgene-explorer' },
+                { name: 'teen.vote', description: 'tool to run voter registration drives and engage young people in civics', views: '10k+ students engaged annually', url: 'https://example.com/teen-vote' },
+                { name: 'CancerX Data Sprint', description: 'proposed data sprint to promote interoperability of oncology data', url: 'https://example.com/cancerx-data-sprint' },
               ].map((project) => (
                 <div key={project.name} className="flex flex-col sm:flex-row items-start group hover:bg-gray-100 p-2 rounded-lg transition-colors">
-                  <Link href="#" className="font-semibold text-lg hover:underline flex items-center w-full sm:w-56 shrink-0 mb-2 sm:mb-0">
+                  <Link href={project.url} className="font-semibold text-lg hover:underline flex items-center w-full sm:w-56 shrink-0 mb-2 sm:mb-0">
                     {project.name}
                     <ArrowUpRight className="ml-1 h-4 w-4" aria-hidden="true" />
                   </Link>
@@ -211,12 +206,12 @@ useEffect(() => {
             <h2 className="text-2xl font-semibold mb-5">Featured Press</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { title: 'NYC youth voter turnout is always low. Can this digital tool change that?', publication: 'The Gothamist' },
-                { title: 'Student Aims to Help Others Access Health Care Support Through Obama Foundation Scholarship', publication: 'Illinois Tech Today' },
-                { title: 'Health IT Vendors to Support USCDI+ Cancer Data Elements', publication: 'Healthcare Innovation' },
-                { title: 'Thank You 2023 Civic Digital Fellows', publication: 'HHS' },
+                { title: 'NYC youth voter turnout is always low. Can this digital tool change that?', publication: 'The Gothamist', url: 'https://example.com/nyc-youth-voter' },
+                { title: 'Student Aims to Help Others Access Health Care Support Through Obama Foundation Scholarship', publication: 'Illinois Tech Today', url: 'https://example.com/student-healthcare' },
+                { title: 'Health IT Vendors to Support USCDI+ Cancer Data Elements', publication: 'Healthcare Innovation', url: 'https://example.com/health-it-vendors' },
+                { title: 'Thank You 2023 Civic Digital Fellows', publication: 'HHS', url: 'https://example.com/civic-digital-fellows' },
               ].map((article, index) => (
-                <ArticleCard key={article.title} title={article.title} publication={article.publication} index={index} />
+                <ArticleCard key={article.title} title={article.title} publication={article.publication} index={index} url={article.url} />
               ))}
             </div>
           </section>
@@ -235,13 +230,13 @@ useEffect(() => {
             <h2 className="text-2xl font-semibold mb-5">Socials</h2>
             <div className="space-y-2">
               {[
-                { platform: 'GitHub', username: 'ryanmanthy' },
-                { platform: 'LinkedIn', username: 'ryanmanthy' },
+                { platform: 'GitHub', username: 'ryanmanthy', url: 'https://github.com/ryanmanthy' },
+                { platform: 'LinkedIn', username: 'ryanmanthy', url: 'https://linkedin.com/in/ryanmanthy' },
               ].map((social) => (
                 <div key={social.platform} className="flex items-center">
                   <span className="w-24">{social.platform}</span>
                   <span className="flex-grow border-b border-gray-300 mx-2" aria-hidden="true"></span>
-                  <Link href="#" className="hover:underline">
+                  <Link href={social.url} className="hover:underline">
                     {social.username}
                   </Link>
                 </div>
