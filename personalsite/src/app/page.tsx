@@ -182,10 +182,10 @@ governments, non-profits, and biologists`
           <h2 className="text-2xl font-semibold mb-8">Projects and initiatives:</h2>
           <div className="space-y-6">
             {[
-              { name: 'Youth Civic Hub', description: 'centralized civic information tool for NYC youth', partnerships: 'built in partnership with NYC Office of Public Engagement', url: 'https://example.com/youth-civic-hub'  },
-              { name: 'CELLxGENE Explorer', description: 'conducted a post-launch usability test of visualization tool', url: 'https://example.com/cellxgene-explorer' },
-              { name: 'teen.vote', description: 'tool to run voter registration drives and engage young people in civics', views: '10k+ students engaged annually', url: 'https://example.com/teen-vote' },
-              { name: 'CancerX Data Sprint', description: 'proposed data sprint to promote interoperability of oncology data', url: 'https://example.com/cancerx-data-sprint' },
+              { name: 'Youth Civic Hub', description: 'centralized civic information tool for NYC youth', partnerships: 'built in partnership with NYC Office of Public Engagement', url: 'https://www.youthcivichub.org/'  },
+              { name: 'CELLxGENE Explorer', description: 'conducted a post-launch usability test of visualization tool', url: 'https://cellxgene.cziscience.com/e/61af564d-e5ea-4d34-a0f3-2668a00db376.cxg/' },
+              { name: 'teen.vote', description: 'tool to run voter registration drives and engage young people in civics', views: '10k+ students engaged annually', url: 'https://www.teen.vote/pa' },
+              { name: 'CancerX Data Sprint', description: 'proposed data sprint to promote interoperability of oncology data', url: 'https://cancerx.health/wp-content/uploads/2023/12/CancerX-Data-Sprint-I-New-Findings-Shared.pdf' },
             ].map((project) => (
               <Link href={project.url} key={project.name} className="block group hover:bg-gray-100 p-2 rounded-lg transition-colors">
                 <div className="flex flex-col sm:flex-row items-start">
@@ -208,10 +208,10 @@ governments, non-profits, and biologists`
             <h2 className="text-2xl font-semibold mb-5">Featured Press</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { title: 'NYC youth voter turnout is always low. Can this digital tool change that?', publication: 'The Gothamist', url: 'https://example.com/nyc-youth-voter' },
-                { title: 'Student Aims to Help Others Access Health Care Support Through Obama Foundation Scholarship', publication: 'Illinois Tech Today', url: 'https://example.com/student-healthcare' },
-                { title: 'Health IT Vendors to Support USCDI+ Cancer Data Elements', publication: 'Healthcare Innovation', url: 'https://example.com/health-it-vendors' },
-                { title: 'Thank You 2023 Civic Digital Fellows', publication: 'HHS', url: 'https://example.com/civic-digital-fellows' },
+                { title: 'NYC youth voter turnout is always low. Can this digital tool change that?', publication: 'The Gothamist', url: 'https://gothamist.com/news/nyc-youth-voter-turnout-is-always-low-can-this-digital-tool-change-that' },
+                { title: 'Student Aims to Help Others Access Health Care Support Through Obama Foundation Scholarship', publication: 'Illinois Tech Today', url: 'https://www.iit.edu/news/drive-social-impact-student-aims-help-others-access-health-care-support-through-obama-foundation' },
+                { title: 'Health IT Vendors to Support USCDI+ Cancer Data Elements', publication: 'Healthcare Innovation', url: 'https://www.hcinnovationgroup.com/interoperability-hie/standards/news/53098513/health-it-vendors-to-support-uscdi-cancer-data-elements' },
+                { title: 'Thank You 2023 Civic Digital Fellows', publication: 'HHS', url: 'https://www.hhs.gov/blog/2023/09/06/thank-you-2023-civic-digital-fellows.html' },
               ].map((article, index) => (
                 <ArticleCard key={article.title} title={article.title} publication={article.publication} index={index} url={article.url} />
               ))}
