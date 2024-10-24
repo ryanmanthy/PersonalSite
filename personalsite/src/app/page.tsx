@@ -116,10 +116,7 @@ const ArticleCard = ({ title, publication, index, url }: { title: string; public
 export default function Home() {
   const [typedText, setTypedText] = useState('')
   const fullText = `Hey, 👋
-I'm a designer, engineer,
-and civic organizer
-who enjoys building cool stuff for
-governments, non-profits, and biologists`
+I'm a designer, engineer, and civic organizer who enjoys building cool stuff for governments, non-profits, and biologists.`
 
   useEffect(() => {
     let i = 0
@@ -166,8 +163,8 @@ governments, non-profits, and biologists`
         <main className="space-y-20">
           <section className="transition-all duration-1000 ease-out delay-300">
           <div className="flex flex-col md:flex-row items-start mb-5">
-            <div className="w-full flex justify-center md:w-auto">
-              <Image src='/ryanmanthy_1.png' alt="Ryan Manthy Headshot" style={{ marginRight: '2rem' }} width={200} height={300} className="rounded-lg mb-4 md:mb-0 md:mr-4" priority />
+            <div className="w-full md:w-auto mb-8 md:mb-0 md:mr-4">
+              <Image src='/ryanmanthy_1.png' alt="Ryan Manthy Headshot" style={{ marginRight: '4rem' }} width={250} height={400} className="min-w-[200px] rounded-lg mb-4 md:mb-0 md:mr-[5rem]" priority />
             </div>
             <h2 className="text-3xl whitespace-pre-line">{typedText}</h2>
           </div>
