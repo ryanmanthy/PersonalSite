@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,16 +26,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHXMCR36KB"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)}
-        gtag('js', new Date());
-
-        gtag('config', 'G-YHXMCR36KB');
-      </script>
-      </head>
+      <Head>
+        {/* Google Analytics Script */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YHXMCR36KB"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YHXMCR36KB');
+            `,
+          }}
+        />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
