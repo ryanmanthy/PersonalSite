@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
 
 const ArticleCard = ({ title, publication, index, url }: { title: string; publication: string; index: number; url: string }) => {
   const [isHovered, setIsHovered] = useState(false)
@@ -166,7 +166,23 @@ I'm a designer, engineer, and civic organizer who enjoys building cool stuff for
             <div className="w-full md:w-auto mb-8 md:mb-0 md:mr-4">
               <Image src='/ryanmanthy_1.png' alt="Ryan Manthy Headshot" style={{ marginRight: '4rem' }} width={250} height={400} className="min-w-[200px] rounded-lg mb-4 md:mb-0 md:mr-[5rem]" priority />
             </div>
-            <h2 className="text-3xl whitespace-pre-line">{typedText}</h2>
+            <div className="flex flex-col">
+                <h2 className="text-3xl whitespace-pre-line mb-4">{typedText}</h2>
+                <div className="flex space-x-4 mt-4">
+                  <Link href="https://github.com/ryanmanthy" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-6 h-6 text-gray-600 hover:text-gray-800" />
+                    <span className="sr-only">GitHub</span>
+                  </Link>
+                  <Link href="https://linkedin.com/in/ryanmanthy" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="w-6 h-6 text-gray-600 hover:text-gray-800" />
+                    <span className="sr-only">LinkedIn</span>
+                  </Link>
+                  <Link href="mailto:hello@ryanmanthy.com">
+                    <Mail className="w-6 h-6 text-gray-600 hover:text-gray-800" />
+                    <span className="sr-only">Email</span>
+                  </Link>
+                </div>
+            </div>
           </div>
             <div className="h-5" aria-hidden="true"></div>
             <p className="text-base">
