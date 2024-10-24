@@ -138,7 +138,7 @@ I'm a designer, engineer, and civic organizer who enjoys building cool stuff for
     <div className="min-h-screen bg-[#FFF9F4] flex flex-col items-center py-[max(7vh,2.5rem)] px-[max(7vw,1.25rem)] font-sans text-gray-800">
       <div className="w-full max-w-[750px]">
         <header className="flex justify-between items-center mb-20 transition-all duration-1000 ease-out">
-          <h1 className="text-3xl font-bold">Ryan Manthy</h1>
+          <h1 className="text-3xl font-bold">Ryan Manthy </h1>
           <nav>
           <ul className="flex space-x-4">
         <li>
