@@ -141,28 +141,37 @@ governments, non-profits, and biologists`
         <header className="flex justify-between items-center mb-20 transition-all duration-1000 ease-out">
           <h1 className="text-3xl font-bold">Ryan Manthy</h1>
           <nav>
-            <ul className="flex space-x-4">
-              {['Contact', 'Resume'].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:underline">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <ul className="flex space-x-4">
+        <li>
+          <Link href="mailto:rmanthy@hawk.iit.edu" className="hover:underline">
+            Contact
+          </Link>
+        </li>
+        <li>
+          <Link 
+            href="https://drive.google.com/file/d/1PgV0hdBCOM9RsfHS7wdksxjg9ivQBYgB/view?usp=sharing" 
+            className="hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </Link>
+        </li>
+      </ul>
           </nav>
         </header>
 
         <main className="space-y-20">
           <section className="transition-all duration-1000 ease-out delay-300">
             <div className="flex items-start mb-5">
-              <Image
-                src="/placeholder.svg?height=200&width=200"
-                alt="Ryan Manthy"
-                width={200}
-                height={200}
-                className="rounded-lg mr-4"
-              />
+            <Image
+              src='/ryanmanthy_1.png'
+              alt="Ryan Manthy Headshot"
+              width={200}
+              height={200}
+              className="rounded-lg mr-4"
+              priority
+            />
               <h2 className="text-3xl whitespace-pre-line">{typedText}</h2>
             </div>
             <div className="h-5" aria-hidden="true"></div>
