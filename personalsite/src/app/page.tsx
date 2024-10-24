@@ -235,8 +235,8 @@ I'm a designer, engineer, and civic organizer who enjoys building cool stuff for
             <h2 className="text-2xl font-semibold mb-5">Socials</h2>
             <div className="space-y-2">
               {[
-                { platform: 'GitHub', username: 'ryanmanthy', url: 'https://github.com/ryanmanthy' },
-                { platform: 'LinkedIn', username: 'ryanmanthy', url: 'https://linkedin.com/in/ryanmanthy' },
+                { platform: 'GitHub', username: '@ryanmanthy', url: 'https://github.com/ryanmanthy' },
+                { platform: 'LinkedIn', username: '/in/ryanmanthy', url: 'https://linkedin.com/in/ryanmanthy' },
               ].map((social) => (
                 <div key={social.platform} className="flex items-center">
                   <span className="w-24">{social.platform}</span>
