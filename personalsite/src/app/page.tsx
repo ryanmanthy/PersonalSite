@@ -165,17 +165,12 @@ governments, non-profits, and biologists`
 
         <main className="space-y-20">
           <section className="transition-all duration-1000 ease-out delay-300">
-            <div className="flex items-start mb-5">
-            <Image
-              src='/ryanmanthy_1.png'
-              alt="Ryan Manthy Headshot"
-              width={200}
-              height={200}
-              className="rounded-lg mr-4"
-              priority
-            />
-              <h2 className="text-3xl whitespace-pre-line">{typedText}</h2>
+          <div className="flex flex-col md:flex-row items-start mb-5">
+            <div className="w-full flex justify-center md:w-auto">
+              <Image src='/ryanmanthy_1.png' alt="Ryan Manthy Headshot" style={{ marginRight: '2rem' }} width={200} height={300} className="rounded-lg mb-4 md:mb-0 md:mr-4" priority />
             </div>
+            <h2 className="text-3xl whitespace-pre-line">{typedText}</h2>
+          </div>
             <div className="h-5" aria-hidden="true"></div>
             <p className="text-base">
               I'm in my last year studying <strong>computer science </strong> and <strong>biomedical engineering </strong>at Illinois Tech. Right now, I'm creating software to get out the vote 
