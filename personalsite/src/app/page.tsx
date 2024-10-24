@@ -91,6 +91,7 @@ const ArticleCard = ({ title, publication, index, url }: { title: string; public
   }, [isHovered, color])
 
   return (
+    
     <Link href={url} className="block h-full">
       <div 
         className="p-4 rounded-lg transition-all duration-300 ease-in-out 
@@ -111,6 +112,12 @@ const ArticleCard = ({ title, publication, index, url }: { title: string; public
     </Link>
   )
 }
+
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
 
 export default function Home() {
   const [typedText, setTypedText] = useState('')
@@ -136,6 +143,15 @@ governments, non-profits, and biologists`
   }, [])
 
   return (
+    <>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHXMCR36KB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YHXMCR36KB');
+    </script>
     <div className="min-h-screen bg-[#FFF9F4] flex flex-col items-center py-[max(7vh,2.5rem)] px-[max(7vw,1.25rem)] font-sans text-gray-800">
       <div className="w-full max-w-[750px]">
         <header className="flex justify-between items-center mb-20 transition-all duration-1000 ease-out">
@@ -260,5 +276,6 @@ governments, non-profits, and biologists`
         <p>&copy; Site created by Ryan Manthy.</p>
       </footer>
     </div>
+    </>
   )
 }
