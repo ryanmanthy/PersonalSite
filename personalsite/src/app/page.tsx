@@ -187,7 +187,7 @@ I'm a designer, engineer, and civic organizer who enjoys building cool stuff for
             <div className="h-5" aria-hidden="true"></div>
             <p className="text-base">
               I'm in my last year studying <strong>computer science </strong> and <strong>biomedical engineering </strong>at Illinois Tech. Right now, I'm creating software to get out the vote 
-              in Pennsylvania and Arizona with <Link href="https://www.new-voters.org" className="underline">New Voters</Link> and building <Link href="https://www.govgoose.com" className="underline">GovGoose</Link>, a RAG Model for searching state and local government sites.<br /><br />
+              in Pennsylvania and Arizona with <Link href="https://www.new-voters.org" className="underline">New Voters</Link> and building technology for governments at a YC-backed startup.<br /><br />
               I've previously worked at the <Link href="https://www.chanzuckerberg.com" className="underline">Chan Zuckerberg Initiative</Link>, 
               <Link href="https://www.hhs.gov/ash/osm/innovationx/index.html" className="underline">U.S. Department of Health and Human Services</Link>, <Link href="https://kaplan.iit.edu" className="underline">Kaplan Institute</Link>, and Dom's Kitchen & Market <span className="italic">(Closed in 2024)</span>. I am a <strong>2022 Obama Chesky Voyager Scholar </strong>
               and 2024 Student Laureate for the <strong>Abraham Lincoln Civic Enagagement Award</strong>. <br /><br />
