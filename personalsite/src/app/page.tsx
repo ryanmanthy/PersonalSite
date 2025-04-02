@@ -274,11 +274,43 @@ I'm a designer, engineer, and civic organizer who enjoys building cool stuff for
       </div>
       
       <div className="w-full overflow-hidden" style={{ height: '60px' }}>
-        <svg className="absolute left-0 right-0 w-full" height="60" width="100%" preserveAspectRatio="none" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 60H1440V30C1320 45 1200 52 1080 45C960 38 840 22 720 22C600 22 480 30 360 38C240 45 120 22 0 18V60Z" fill="#FF984D" />
-          <path d="M0 60H1440V38C1320 45 1200 40 1080 35C960 38 840 30 720 30C600 30 480 38 360 45C240 52 120 56 0 60V60Z" fill="#C22A64" />
-          <path d="M0 60H1440V45C1320 52 1200 56 1080 52C960 49 840 45 720 42C600 40 480 45 360 49C240 54 120 57 0 60V60Z" fill="#7333C6" />
-          <path d="M0 60H1440V52C1320 57 1200 58 1080 57C960 56 840 52 720 52C600 50 480 50 360 52C240 54 120 56 0 54V60Z" fill="#4636FF" />
+        <svg className="absolute left-0 right-0 w-full" height="130" width="100%" preserveAspectRatio="none" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg">
+        <path 
+          d="M0 60H1450V15
+            C1320 30 1200 40 1080 40
+            C960 38 840 22 720 22
+            C600 22 480 30 360 38
+            C240 45 120 22 0 18
+            V60Z" 
+          fill="#FF984D" 
+        />
+        <path 
+          d="M0 60H1440V38
+            C1320 44 1200 42 1080 38
+            C960 36 840 34 720 34
+            C600 34 480 36 360 40
+            C240 46 120 52 0 60
+            Z" 
+          fill="#C22A64" 
+        />
+        <path 
+          d="M0 80H1440V45
+            C1320 52 1200 56 1080 52
+            C960 49 840 45 720 42
+            C600 40 480 45 360 49
+            C240 54 120 57 0 60
+            Z" 
+          fill="#7333C6" 
+        />
+        <path 
+          d="M0 60H1440V48
+            C1320 53 1200 54 1080 53
+            C960 52 840 48 720 48
+            C600 46 480 46 360 48
+            C240 50 120 52 0 17
+            V60Z" 
+          fill="#4636FF" 
+        />
         </svg>
       </div>
     </div>
